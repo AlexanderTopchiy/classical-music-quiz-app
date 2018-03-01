@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     public void finishQuiz(View view) {
         // Get player name.
         EditText name  = findViewById(R.id.name_edit_text);
-        String namePlayer = name.getText().toString();
+        String namePlayer = name.getText().toString().trim();
 
 
         // Get status of right answers.
