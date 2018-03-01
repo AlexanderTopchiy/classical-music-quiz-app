@@ -74,10 +74,14 @@ public class MainActivity extends AppCompatActivity {
         // Get status of right answers.
         RadioButton getAnswer1_2 = findViewById(R.id.answer_1_2);
         boolean isAnswer1_2 = getAnswer1_2.isChecked();
+        CheckBox getAnswer2_1 = findViewById(R.id.answer_2_1);
+        boolean isAnswer2_1 = getAnswer2_1.isChecked();
         CheckBox getAnswer2_2 = findViewById(R.id.answer_2_2);
         boolean isAnswer2_2 = getAnswer2_2.isChecked();
         CheckBox getAnswer2_3 = findViewById(R.id.answer_2_3);
         boolean isAnswer2_3 = getAnswer2_3.isChecked();
+        CheckBox getAnswer2_4 = findViewById(R.id.answer_2_4);
+        boolean isAnswer2_4 = getAnswer2_4.isChecked();
         RadioButton getAnswer3_1 = findViewById(R.id.answer_3_1);
         boolean isAnswer3_1 = getAnswer3_1.isChecked();
         RadioButton getAnswer4_2 = findViewById(R.id.answer_4_2);
@@ -101,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         // Check right answers.
         if (namePlayer.isEmpty()) namePlayer = "player";
         if (isAnswer1_2) score += 1;
-        if (isAnswer2_2 && isAnswer2_3) score += 1;
+        if (isAnswer2_2 && isAnswer2_3 && !isAnswer2_1 && !isAnswer2_4) score += 1;
         if (isAnswer3_1) score += 1;
         if (isAnswer4_2) score += 1;
         if (isAnswer5_2) score += 1;
