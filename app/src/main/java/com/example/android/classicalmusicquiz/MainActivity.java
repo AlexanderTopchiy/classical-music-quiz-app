@@ -115,8 +115,13 @@ public class MainActivity extends AppCompatActivity {
         if (isAnswer10_4) score += 1;
 
         // Show result message.
-        Toast.makeText(this, "Congrats, " + namePlayer +
-                "! You correctly answered on " + score + " of 10 questions!", Toast.LENGTH_LONG).show();
+        if (score == 10) {
+            Toast.makeText(this, namePlayer +
+                    " - you are awesome! You correctly answered on all 10 questions!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Congrats, " + namePlayer +
+                    "! You correctly answered on " + score + " of 10 questions!", Toast.LENGTH_LONG).show();
+        }
     }
 
 

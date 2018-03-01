@@ -60,6 +60,7 @@
         <CheckBox
             android:id="@+id/answer_2_4"
             style="@style/answers"
+            android:layout_marginBottom="16dp"
             android:text="@string/answer_2_4" />
 
 
