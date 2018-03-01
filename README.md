@@ -8,13 +8,13 @@ This quiz app will help you to dive into the world of classical music and test y
 
 ## Screenshot
 
-![Classical Music Quiz app begin](https://image.ibb.co/eOjNiH/Screenshot_1.png)
+![Classical Music Quiz app begin](https://image.ibb.co/eUqgVx/Screenshot_1.png)
 ![Classical Music Quiz app middle](https://image.ibb.co/kiMwAx/Screenshot_2.png)
 ![Classical Music Quiz app end](https://image.ibb.co/bD1UVx/Screenshot_3.png)
 
 ## One-file installation
 
-Here is the [APK file](https://www.dropbox.com/s/f5ods8nxb3crbdm/ClassicalMusicQuiz.apk?dl=0).
+Here is the [APK file](https://www.dropbox.com/s/mf887d4jql5jclw/ClassicalMusicQuiz.apk?dl=0).
 
 ## License
 ```
