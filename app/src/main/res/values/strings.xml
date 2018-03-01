@@ -1,13 +1,10 @@
 <resources>
     <string name="app_name">Classical Music Quiz</string>
-    <string name="name_edit_text">Please, type Your name here...</string>
+    <string name="name_edit_text">Please, type Your name here&#8230;</string>
     <string name="invitation">Hi! Do you have good knowledge about classical music? Let see together!
         Please, answer on following questions and then press \"Finish\" to know your results.</string>
     <string name="question_1">1. What is the name of the 41st symphony of Mozart:</string>
-    <string name="answer_1_1">Mars</string>
-    <string name="answer_1_2">Jupiter</string>
-    <string name="answer_1_3">Mercury</string>
-    <string name="answer_1_4">Venus</string>
+    <string name="answer_1_edit_text">Please, type Your answer here&#8230;</string>
     <string name="question_2">2. Which of the following composers lived during the Baroque era:</string>
     <string name="answer_2_1">Honegger</string>
     <string name="answer_2_2">Baсh</string>

@@ -19,10 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     // Set key for save value then changing orientation.
-    static final String ANSWER1_1 = "answer1_1";
-    static final String ANSWER1_2 = "answer1_2";
-    static final String ANSWER1_3 = "answer1_3";
-    static final String ANSWER1_4 = "answer1_4";
+    static final String NAME = "name_player";
+    static final String ANSWER1 = "answer1";
     static final String ANSWER2_1 = "answer2_1";
     static final String ANSWER2_2 = "answer2_2";
     static final String ANSWER2_3 = "answer2_3";
@@ -70,10 +68,11 @@ public class MainActivity extends AppCompatActivity {
         EditText name  = findViewById(R.id.name_edit_text);
         String namePlayer = name.getText().toString().trim();
 
+        // Get answer for question 1.
+        EditText getAnswer1 = findViewById(R.id.answer_1_edit_text);
+        String answer1 = getAnswer1.getText().toString().trim();
 
         // Get status of right answers.
-        RadioButton getAnswer1_2 = findViewById(R.id.answer_1_2);
-        boolean isAnswer1_2 = getAnswer1_2.isChecked();
         CheckBox getAnswer2_1 = findViewById(R.id.answer_2_1);
         boolean isAnswer2_1 = getAnswer2_1.isChecked();
         CheckBox getAnswer2_2 = findViewById(R.id.answer_2_2);
@@ -104,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Check right answers.
         if (namePlayer.isEmpty()) namePlayer = "player";
-        if (isAnswer1_2) score += 1;
+        if (answer1.toLowerCase().equals("jupiter")) score += 1;
         if (isAnswer2_2 && isAnswer2_3 && !isAnswer2_1 && !isAnswer2_4) score += 1;
         if (isAnswer3_1) score += 1;
         if (isAnswer4_2) score += 1;
@@ -130,9 +129,11 @@ public class MainActivity extends AppCompatActivity {
         EditText name  = findViewById(R.id.name_edit_text);
         name.setText("");
 
+        // Clear answer 1 text field.
+        EditText getAnswer1 = findViewById(R.id.answer_1_edit_text);
+        getAnswer1.setText("");
+
         // Clear answers.
-        RadioGroup groupAnswer1 = findViewById(R.id.group_question_1);
-        groupAnswer1.clearCheck();
         CheckBox getAnswer2_1 = findViewById(R.id.answer_2_1);
         getAnswer2_1.setChecked(false);
         CheckBox getAnswer2_2 = findViewById(R.id.answer_2_2);
@@ -166,9 +167,15 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Get player name.
+        EditText name  = findViewById(R.id.name_edit_text);
+        String namePlayer = name.getText().toString().trim();
+
+        // Get answer for question 1.
+        EditText getAnswer1 = findViewById(R.id.answer_1_edit_text);
+        String answer1 = getAnswer1.getText().toString().trim();
+
         // Get status of right answers.
-        RadioButton getAnswer1_2 = findViewById(R.id.answer_1_2);
-        boolean isAnswer1_2 = getAnswer1_2.isChecked();
         CheckBox getAnswer2_2 = findViewById(R.id.answer_2_2);
         boolean isAnswer2_2 = getAnswer2_2.isChecked();
         CheckBox getAnswer2_3 = findViewById(R.id.answer_2_3);
@@ -191,12 +198,6 @@ public class MainActivity extends AppCompatActivity {
         boolean isAnswer10_4 = getAnswer10_4.isChecked();
 
         // Get status of another answers.
-        RadioButton getAnswer1_1 = findViewById(R.id.answer_1_1);
-        boolean isAnswer1_1 = getAnswer1_1.isChecked();
-        RadioButton getAnswer1_3 = findViewById(R.id.answer_1_3);
-        boolean isAnswer1_3 = getAnswer1_3.isChecked();
-        RadioButton getAnswer1_4 = findViewById(R.id.answer_1_4);
-        boolean isAnswer1_4 = getAnswer1_4.isChecked();
         CheckBox getAnswer2_1 = findViewById(R.id.answer_2_1);
         boolean isAnswer2_1 = getAnswer2_1.isChecked();
         CheckBox getAnswer2_4 = findViewById(R.id.answer_2_4);
@@ -250,11 +251,13 @@ public class MainActivity extends AppCompatActivity {
         RadioButton getAnswer10_3 = findViewById(R.id.answer_10_3);
         boolean isAnswer10_3 = getAnswer10_3.isChecked();
 
+        // Save player name.
+        savedInstanceState.putString(NAME, namePlayer);
+
+        // Save answer 1.
+        savedInstanceState.putString(ANSWER1, answer1);
+
         // Save current status of answers.
-        savedInstanceState.putBoolean(ANSWER1_1, isAnswer1_1);
-        savedInstanceState.putBoolean(ANSWER1_2, isAnswer1_2);
-        savedInstanceState.putBoolean(ANSWER1_3, isAnswer1_3);
-        savedInstanceState.putBoolean(ANSWER1_4, isAnswer1_4);
         savedInstanceState.putBoolean(ANSWER2_1, isAnswer2_1);
         savedInstanceState.putBoolean(ANSWER2_2, isAnswer2_2);
         savedInstanceState.putBoolean(ANSWER2_3, isAnswer2_3);
